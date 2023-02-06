@@ -63,6 +63,12 @@ box h2{
 #form input{
     margin-left: 10px;
 }
+#form input:focus{
+    outline: none;
+}
+#form input[type=text]{
+    width: 220px;
+}
 .enviar{
     background-color: gray;
     color: white;
