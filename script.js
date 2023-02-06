@@ -14,12 +14,13 @@ let contadorT = 0
 
 renderMoney()
 
-
+// REVER A LÓGICA DAS CONTAS !
+// COLOCAR SALDO POSITIVO COR VERDE NEGATIVO VERMELHO
+// 
 
 
 function addTransicao(e){
     e.preventDefault()
-
     if (desc.value == ''){
         desc.style.borderColor='red'
         setTimeout(()=>{
@@ -45,8 +46,8 @@ function addTransicao(e){
         addSaida()
         limpaCampos()
     }
-
 }
+
 function addEntrada(){
     valorTotal += Number(valor.value)
     valorEntrada += Number(valor.value)
@@ -57,6 +58,7 @@ function addEntrada(){
     renderMoney()
     limpaCampos()
 }
+
 function addSaida(){
     valorTotal -= Number(valor.value)
     valorSaida += Number(valor.value)
@@ -72,7 +74,6 @@ function limpaCampos(){
     desc.value = ''
     valor.value = ''
 }
-
 
 function criaDiv(){
     const div = document.createElement('div')
