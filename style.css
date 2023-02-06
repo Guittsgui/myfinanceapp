@@ -130,22 +130,31 @@ box h2{
     color: rgb(255, 128, 128);
 }
 .containerGastos{
+   margin: auto;
+}
+.containerEntrada{
     background-color: rgba(0, 214, 0, 0.514);
     width: 700px;
     height: 50px;
     margin: auto;
-    border-radius: 15px;
     color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
     font-weight: bolder;
-}
-.containerEntrada{
-
+    border: 1px solid rgba(0, 0, 0, 0.521);
 }
 .containerSaida{
-
+    background-color: rgba(214, 50, 0, 0.514);
+    width: 700px;
+    height: 50px;
+    margin: auto;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bolder;
 }
 
