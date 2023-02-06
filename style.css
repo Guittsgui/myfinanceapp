@@ -39,6 +39,9 @@ body{
     display: inline;
    margin-bottom: 25px;
 }
+.box img{
+    width: 30px;
+}
 
 box h2{
     margin-top: 20px
@@ -68,14 +71,26 @@ box h2{
 }
 #form input[type=text]{
     width: 220px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: black;
 }
+#form input[type=number]{
+    width: 180px;
+    height: 25px;
+    border-radius: 5px;
+    border-color: black;
+}
+
 .enviar{
-    background-color: gray;
+    background-color: blueviolet;;
     color: white;
     width: 80px;
     height: 60px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.349);
 }
 .enviar:hover{
-    background-color: rgba(196, 196, 196, 0.61);
+    background-color: rgb(162, 98, 221);
     cursor: pointer;
 }

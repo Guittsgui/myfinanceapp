@@ -19,10 +19,13 @@ function renderMoney(){
 
 function addTransicao(e){
     e.preventDefault()
+    verificaVazio()
     if(tipo == 'entrada'){
+        console.log(tipo)
         addEntrada()
         limpaCampos()
     }else{
+        console.log(tipo)
         addSaida()
         limpaCampos()
     }
@@ -32,13 +35,34 @@ function addEntrada(){
     valorTotal += Number(valor.value)
     valorEntrada += Number(valor.value)
     renderMoney()
+    showGastos()
 }
 function addSaida(){
     valorTotal -= Number(valor.value)
     valorSaida += Number(valor.value)
     renderMoney()
+    showGastos()
 }
 function limpaCampos(){
     desc.value = ''
     valor.value = ''
+}
+function showGastos(){
+
+}
+function verificaVazio(){
+    if (desc.value == ''){
+        desc.style.borderColor='red'
+        setTimeout(()=>{
+            desc.style.borderColor='black'
+        },1000)
+        return
+    }
+    if (valor.value == ''){
+        valor.style.borderColor='red'
+        setTimeout(()=>{
+            valor.style.borderColor='black'
+        },1000)
+        return
+    }
 }
