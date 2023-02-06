@@ -19,7 +19,20 @@ function renderMoney(){
 
 function addTransicao(e){
     e.preventDefault()
-    verificaVazio()
+    if (desc.value == ''){
+        desc.style.borderColor='red'
+        setTimeout(()=>{
+            desc.style.borderColor='black'
+        },1000)
+        return
+    }
+    if (valor.value == ''){
+        valor.style.borderColor='red'
+        setTimeout(()=>{
+            valor.style.borderColor='black'
+        },1000)
+        return
+    }
     if(tipo == 'entrada'){
         console.log(tipo)
         addEntrada()
@@ -49,20 +62,4 @@ function limpaCampos(){
 }
 function showGastos(){
 
-}
-function verificaVazio(){
-    if (desc.value == ''){
-        desc.style.borderColor='red'
-        setTimeout(()=>{
-            desc.style.borderColor='black'
-        },1000)
-        return
-    }
-    if (valor.value == ''){
-        valor.style.borderColor='red'
-        setTimeout(()=>{
-            valor.style.borderColor='black'
-        },1000)
-        return
-    }
 }

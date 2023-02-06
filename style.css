@@ -81,6 +81,9 @@ box h2{
     border-radius: 5px;
     border-color: black;
 }
+#form input[type=radio]{
+    margin-right: 15px
+}
 
 .enviar{
     background-color: blueviolet;;
