@@ -63,3 +63,9 @@ function limpaCampos(){
 function showGastos(){
 
 }
+
+function criaDiv(){
+    const div = document.createElement('div')
+    return div
+}
+

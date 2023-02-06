@@ -51,7 +51,8 @@ box h2{
  height: 120px;
  border-top: 1px solid black;
  border-bottom: 1px solid black;
- margin-top: 30px;
+ margin-top: 20px;
+ margin-bottom: 20px;
  font-size: 25px;
  display: flex;
  align-items: center;
@@ -97,3 +98,54 @@ box h2{
     background-color: rgb(162, 98, 221);
     cursor: pointer;
 }
+.titleGastos{
+    background-color: blueviolet;
+    color: white;
+    width: 700px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.459);
+}
+.contadorBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.titleGastos h2{
+    font-size: 15px;
+}
+.titleGastos a{
+    text-decoration: none;
+    color: white;
+}
+.titleGastos a:hover{
+    cursor: pointer;
+    color: rgb(255, 128, 128);
+}
+.containerGastos{
+    background-color: rgba(0, 214, 0, 0.514);
+    width: 700px;
+    height: 50px;
+    margin: auto;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    font-weight: bolder;
+}
+.containerEntrada{
+
+}
+.containerSaida{
+
+}
+
