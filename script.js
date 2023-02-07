@@ -77,7 +77,7 @@ function limpaCampos(){
 
 function criaDiv(){
     const div = document.createElement('div')
-    div.innerHTML = `<h2>Valor: R$ ${valor.value}</h2><p>Descrição: ${desc.value}</p><p class="remove">Remove</p>`
+    div.innerHTML = `<h2>Valor:R$ ${valor.value}</h2><p>Descrição: ${desc.value}</p><p class="remove">Remove</p>`
     return div
 }
 function renderMoney(){
@@ -108,7 +108,23 @@ function removeAll(){
 function deleteMsgs(e){
     const targetSelected = e.target
     const targetParent = targetSelected.closest("div")
-    if (targetSelected.classList.contains("remove")){
-        targetParent.remove()
+    if (targetSelected.classList.contains("remove")){ 
+        const value = targetParent.querySelector('h2')
+        const arrayString = value.innerHTML.split(' ')
+        const saida = (Number(arrayString[1]))
+        if (targetParent.classList.contains("containerEntrada")){    
+           let newTotal = valorEntrada - saida
+           valorEntrada = newTotal
+           renderMoney()
+           targetParent.remove()
+        }else{
+          let newTotal = valorSaida - saida
+          valorSaida = newTotal
+          renderMoney()
+          targetParent.remove()
+        }
+        
+   
+       // targetParent.remove()
     }
 }
