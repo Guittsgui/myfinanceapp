@@ -185,4 +185,17 @@ nav button:hover{
     cursor: pointer;
     font-weight: bolder;
 }
+ul {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+}
+.active{
+    color: blueviolet;
+    text-decoration: underline;
+    font-weight: bolder;
+}
 

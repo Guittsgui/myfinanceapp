@@ -7,11 +7,13 @@ const valor = document.querySelector('#valor')
 const containerGastos = document.querySelector('.containerGastos')
 const contadorTransacoes = document.querySelector('.contadorTransacoes')
 const removeall = document.querySelector('.removeAll').addEventListener('click',removeAll)
+const navList = document.querySelector('.listMenuArea')
+const navItens = document.querySelectorAll('.li')
 let valorEntrada = 0
 let valorSaida = 0
 let valorTotal = 0
 let contadorT = 0
-
+navList.addEventListener('click',filterSelected)
 containerGastos.addEventListener('click', deleteMsgs)
 renderMoney()
 
@@ -128,4 +130,25 @@ function deleteMsgs(e){
           targetParent.remove()
         }
     }
+}
+
+function filterSelected(e){
+    
+    for( i of navItens){
+        i.querySelector('button').classList.remove('active')
+    }
+    const filterSelected = e.target
+    filterSelected.classList.add('active')
+    
+    if (filterSelected.innerText == 'Todos'){
+        //
+    }
+    if (filterSelected.innerText == 'Entrada'){
+        //
+    }
+    if (filterSelected.innerText == 'Saída'){
+        //
+    }
+    
+    
 }
