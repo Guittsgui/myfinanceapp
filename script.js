@@ -15,11 +15,6 @@ let contadorT = 0
 containerGastos.addEventListener('click', deleteMsgs)
 renderMoney()
 
-// REVER A LÓGICA DAS CONTAS !
-// COLOCAR SALDO POSITIVO COR VERDE NEGATIVO VERMELHO
-// 
-
-
 function addTransicao(e){
     e.preventDefault()
     if (desc.value == ''){
@@ -112,19 +107,25 @@ function deleteMsgs(e){
         const value = targetParent.querySelector('h2')
         const arrayString = value.innerHTML.split(' ')
         const saida = (Number(arrayString[1]))
+
         if (targetParent.classList.contains("containerEntrada")){    
-           let newTotal = valorEntrada - saida
-           valorEntrada = newTotal
+           let newEntrada = valorEntrada - saida
+           valorEntrada = newEntrada
+           let newContador = contadorT - 1
+           contadorT = newContador
+           let newTotal = valorTotal - saida
+           valorTotal = newTotal
            renderMoney()
            targetParent.remove()
         }else{
-          let newTotal = valorSaida - saida
-          valorSaida = newTotal
+          let newSaida = valorSaida - saida
+          valorSaida = newSaida
+          let newContador = contadorT - 1
+          contadorT = newContador
+          let newTotal = valorTotal + saida
+          valorTotal = newTotal
           renderMoney()
           targetParent.remove()
         }
-        
-   
-       // targetParent.remove()
     }
 }
