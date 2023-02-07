@@ -198,4 +198,7 @@ ul {
     text-decoration: underline;
     font-weight: bolder;
 }
+.filters{
+    display: none;
+}
 

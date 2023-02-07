@@ -9,6 +9,7 @@ const contadorTransacoes = document.querySelector('.contadorTransacoes')
 const removeall = document.querySelector('.removeAll').addEventListener('click',removeAll)
 const navList = document.querySelector('.listMenuArea')
 const navItens = document.querySelectorAll('.li')
+const filterContainer = document.querySelector('.containerFilter')
 
 let valorEntrada = 0
 let valorSaida = 0
@@ -101,6 +102,8 @@ function removeAll(){
     valorSaida = 0
     valorTotal = 0
     contadorT = 0
+    containerGastos.style.display = 'block'
+    filterContainer.style.display = 'none'
     renderMoney()
 }
 
@@ -143,28 +146,5 @@ function filterSelected(e){
     const filterSelected = e.target
     filterSelected.classList.add('active')
     
-    const listaTodos = containerGastos.querySelectorAll('.containerTodos')
-    const listaEntrada = containerGastos.querySelectorAll('.containerEntrada')
-    const listaSaida = containerGastos.querySelectorAll('.containerSaida')
-    // ideia de apagar o container total
-    // criar novos containers pelo filtro
-
-    if (filterSelected.innerText == 'Todos'){
-        containerGastos.innerHTML = ''
-        for( i of listaTodos){
-            containerGastos.appendChild(i)
-        }
+   
     }
-    if (filterSelected.innerText == 'Entrada'){
-        containerGastos.innerHTML = ''
-        for ( i of listaEntrada){
-            containerGastos.appendChild(i)
-        }
-    }
-    if (filterSelected.innerText == 'Saída'){
-        containerGastos.innerHTML = ''
-        for (i of listaSaida){
-            containerGastos.appendChild(i)
-        }
-    }  
-}
