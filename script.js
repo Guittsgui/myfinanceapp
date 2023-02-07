@@ -9,7 +9,7 @@ const contadorTransacoes = document.querySelector('.contadorTransacoes')
 const removeall = document.querySelector('.removeAll').addEventListener('click',removeAll)
 const navList = document.querySelector('.listMenuArea')
 const navItens = document.querySelectorAll('.li')
-const filterContainer = document.querySelector('.containerFilter')
+const containerFilter = document.querySelector('.containerFilter')
 
 let valorEntrada = 0
 let valorSaida = 0
