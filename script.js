@@ -12,6 +12,7 @@ let valorSaida = 0
 let valorTotal = 0
 let contadorT = 0
 
+containerGastos.addEventListener('click', deleteMsgs)
 renderMoney()
 
 // REVER A LÓGICA DAS CONTAS !
@@ -37,7 +38,6 @@ function addTransicao(e){
     }
     contadorT++
     const radio = getRadioValue()  
-    console.log(radio)
     if(radio.value == 'entrada'){
   
         addEntrada()
@@ -104,3 +104,11 @@ function removeAll(){
     renderMoney()
 }
 
+
+function deleteMsgs(e){
+    const targetSelected = e.target
+    const targetParent = targetSelected.closest("div")
+    if (targetSelected.classList.contains("remove")){
+        targetParent.remove()
+    }
+}
