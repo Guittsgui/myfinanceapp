@@ -9,6 +9,7 @@ const contadorTransacoes = document.querySelector('.contadorTransacoes')
 const removeall = document.querySelector('.removeAll').addEventListener('click',removeAll)
 const navList = document.querySelector('.listMenuArea')
 const navItens = document.querySelectorAll('.li')
+
 let valorEntrada = 0
 let valorSaida = 0
 let valorTotal = 0
@@ -51,6 +52,7 @@ function addEntrada(){
     renderMoney()
     const div = criaDiv()
     div.classList.add("containerEntrada")
+    div.classList.add("containerTodos")
     containerGastos.appendChild(div)
     renderMoney()
     limpaCampos()
@@ -62,6 +64,7 @@ function addSaida(){
     renderMoney()
     const div = criaDiv()
     div.classList.add("containerSaida")
+    div.classList.add("containerTodos")
     containerGastos.appendChild(div)
     renderMoney()
     limpaCampos()
@@ -133,22 +136,35 @@ function deleteMsgs(e){
 }
 
 function filterSelected(e){
-    
+    // Menu ativo
     for( i of navItens){
         i.querySelector('button').classList.remove('active')
     }
     const filterSelected = e.target
     filterSelected.classList.add('active')
     
+    const listaTodos = containerGastos.querySelectorAll('.containerTodos')
+    const listaEntrada = containerGastos.querySelectorAll('.containerEntrada')
+    const listaSaida = containerGastos.querySelectorAll('.containerSaida')
+    // ideia de apagar o container total
+    // criar novos containers pelo filtro
+
     if (filterSelected.innerText == 'Todos'){
-        //
+        containerGastos.innerHTML = ''
+        for( i of listaTodos){
+            containerGastos.appendChild(i)
+        }
     }
     if (filterSelected.innerText == 'Entrada'){
-        //
+        containerGastos.innerHTML = ''
+        for ( i of listaEntrada){
+            containerGastos.appendChild(i)
+        }
     }
     if (filterSelected.innerText == 'Saída'){
-        //
-    }
-    
-    
+        containerGastos.innerHTML = ''
+        for (i of listaSaida){
+            containerGastos.appendChild(i)
+        }
+    }  
 }
