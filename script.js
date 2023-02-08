@@ -87,6 +87,13 @@ function renderMoney(){
     totsaida.innerHTML = `R$ ${valorSaida}`
     totentrada.innerHTML = `R$ ${valorEntrada}`
     total.innerHTML= `R$ ${valorTotal}`
+    if (valorTotal < 0){
+        total.style.color ='red'
+    } else if (valorTotal > 0){
+        total.style.color ='green'
+    }else{
+        total.style.color = 'black'
+    }
     contadorTransacoes.innerHTML =`${contadorT}`
 }
 function getRadioValue(){
