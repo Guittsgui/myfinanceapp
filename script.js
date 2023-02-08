@@ -11,12 +11,14 @@ const navList = document.querySelector('.listMenuArea')
 const navItens = document.querySelectorAll('.li')
 const containerFilter = document.querySelector('.containerFilter')
 
+
 let valorEntrada = 0
 let valorSaida = 0
 let valorTotal = 0
 let contadorT = 0
 navList.addEventListener('click',filterSelected)
 containerGastos.addEventListener('click', deleteMsgs)
+
 renderMoney()
 
 function addTransicao(e){
@@ -143,9 +145,7 @@ function filterSelected(e){
     }
     const filterSelected = e.target
     filterSelected.classList.add('active')
-    
     const listaGastos = containerGastos.querySelectorAll('div')
-
         if(filterSelected.innerText=='Todos'){
             for ( let i of listaGastos){
                 i.style.display='flex'

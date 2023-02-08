@@ -202,3 +202,10 @@ ul {
     display: none;
 }
 
+.inputSerchText input{
+    width: 200px;
+    font-weight: 100;
+}
+.inputSerchText input:focus{
+    outline: none;
+}
