@@ -102,8 +102,6 @@ function removeAll(){
     valorSaida = 0
     valorTotal = 0
     contadorT = 0
-    containerGastos.style.display = 'block'
-    filterContainer.style.display = 'none'
     renderMoney()
 }
 
@@ -146,5 +144,30 @@ function filterSelected(e){
     const filterSelected = e.target
     filterSelected.classList.add('active')
     
-   
+    const listaGastos = containerGastos.querySelectorAll('div')
+
+        if(filterSelected.innerText=='Todos'){
+            for ( let i of listaGastos){
+                i.style.display='flex'
+            }
+        }
+        if(filterSelected.innerText == 'Entrada'){
+            for ( let i of listaGastos){
+                if (i.classList.contains('containerSaida')){
+                    i.style.display = 'none'
+                }else{
+                    i.style.display = 'flex'
+                }
+            }
+        }
+        if (filterSelected.innerText == 'Saída'){
+            for ( let i of listaGastos){
+                if (i.classList.contains('containerEntrada')){
+                    i.style.display = 'none'
+                }else{
+                    i.style.display = 'flex'
+                }
+            }
+        }
+
     }
